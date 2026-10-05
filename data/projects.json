@@ -1,0 +1,31 @@
+[{
+  "id": "gamo",
+  "name": "Gamo",
+  "status": "active",
+  "tags": ["Web", "JavaScript", "Game"],
+  "live": "https://gamo-ivory.vercel.app",
+  "repo": "https://github.com/esthera-tiago/Gamo",
+  "problem": "Learn African countries by clicking the correct SVG map region for each country name.",
+  "role": "Game design & front-end development",
+  "stack": ["HTML", "CSS", "JavaScript", "SVG"]
+}, {
+  "id": "kotis",
+  "name": "Kotis",
+  "status": "archived",
+  "tags": ["Web", "Mobile Money", "Hackathon"],
+  "live": "https://kotis.vercel.app",
+  "repo": "https://github.com/esthera-tiago/Kotis",
+  "problem": "Mobile-money-native group collection app (pawaPay) for Central Africa.",
+  "role": "Frontend & hackathon work",
+  "stack": ["HTML", "CSS", "JavaScript", "pawaPay API", "Vercel", "Railway"]
+}, {
+  "id": "networkchecker",
+  "name": "NetworkChecker",
+  "status": "active",
+  "tags": ["Mobile", "Flutter", "Platform Channels", "Firebase"],
+  "live": "",
+  "repo": "https://github.com/AbdoulRazaque226/NetworkChecker",
+  "problem": "Diagnose real network connectivity: type, real internet access, signal/SSID/IP, battery; history exportable as JSON.",
+  "role": "Collaborator — state management, platform channels integration, diagnostics",
+  "stack": ["Flutter", "Dart", "Kotlin", "Swift", "ChangeNotifier", "Firebase Auth", "Cloud Firestore"]
+}]
