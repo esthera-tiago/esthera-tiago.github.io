@@ -1,0 +1,160 @@
+{
+  "en": {
+    "brand": "cute dev",
+    "nav": {
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills",
+      "certifications": "Certificates",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "hero": {
+      "eyebrow": "Hello, I'm",
+      "name": "Esthera Tiago",
+      "role": "Mobile & Web Developer",
+      "ctaProjects": "Projects",
+      "ctaContact": "Contact"
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "A bit about me",
+      "text1": "I'm Esthera Tiago, a developer who loves building usable apps and simple interfaces. I enjoy solving real problems with clean code.",
+      "text2": "I care about accessibility, performance, and keeping things readable. I also love music and singing, and I'm an otaku.",
+      "cardTitle": "Quick facts",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "musicTitle": "What I'm listening to",
+      "musicText": "Placeholder for a Spotify or YouTube playlist. I'll update this when the link is ready."
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "Things I've built",
+      "filterAll": "All",
+      "problem": "Problem",
+      "role": "My role",
+      "stack": "Stack",
+      "links": "Links",
+      "live": "Live demo",
+      "repo": "Git repo",
+      "statusActive": "In production",
+      "statusArchived": "Archived",
+      "statusConcept": "Concept"
+    },
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Grouped by area",
+      "groups": {
+        "mobile": "Mobile",
+        "web": "Web",
+        "tools": "Tools"
+      }
+    },
+    "certifications": {
+      "title": "Certificates",
+      "subtitle": "Courses and achievements",
+      "verify": "Verify"
+    },
+    "experience": {
+      "title": "Experience & Community",
+      "subtitle": "Where I've been involved",
+      "she4tech": "Co-founder — She4Tech. Project management. Student/community association encouraging young girls in tech.",
+      "fagiciel": "Intern — FAGICIEL. Worked with CMS, WordPress, Agile methods, Trello, Scrum.",
+      "yaounde1": "University of Yaoundé 1",
+      "others": "Hackathons and teaching activities as mentioned in context."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Say hi",
+      "email": "Email me",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "cv": "Download CV"
+    },
+    "footer": "Built with pure HTML, CSS & JavaScript.",
+    "loader": {
+      "text": "Loading...",
+      "skip": "Skip intro"
+    }
+  },
+  "fr": {
+    "brand": "cute dev",
+    "nav": {
+      "about": "À propos",
+      "projects": "Projets",
+      "skills": "Compétences",
+      "certifications": "Certifications",
+      "experience": "Expérience & Communauté",
+      "contact": "Contact"
+    },
+    "hero": {
+      "eyebrow": "Salut, je suis",
+      "name": "Esthera Tiago",
+      "role": "Développeuse Mobile & Web",
+      "ctaProjects": "Projets",
+      "ctaContact": "Contact"
+    },
+    "about": {
+      "title": "À propos",
+      "subtitle": "Un peu de moi",
+      "text1": "Je suis Esthera Tiago, une développeuse qui aime créer des applications utiles et des interfaces simples. J'aime résoudre de vrais problèmes avec du code propre.",
+      "text2": "J'accorde de l'importance à l'accessibilité, aux performances et à la lisibilité. J'aime aussi la musique et le chant, et je suis une otaku.",
+      "cardTitle": "Faits rapides",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "musicTitle": "Ce que j'écoute",
+      "musicText": "Emplacement pour une playlist Spotify ou YouTube. À compléter plus tard."
+    },
+    "projects": {
+      "title": "Projets",
+      "subtitle": "Ce que j'ai construit",
+      "filterAll": "Tous",
+      "problem": "Problématique",
+      "role": "Mon rôle",
+      "stack": "Tech stack",
+      "links": "Liens",
+      "live": "Démo live",
+      "repo": "Repo GitHub",
+      "statusActive": "En production",
+      "statusArchived": "Archivé",
+      "statusConcept": "Concept"
+    },
+    "skills": {
+      "title": "Compétences",
+      "subtitle": "Regroupées par domaine",
+      "groups": {
+        "mobile": "Mobile",
+        "web": "Web",
+        "tools": "Outils"
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Formations et réalisations",
+      "verify": "Vérifier"
+    },
+    "experience": {
+      "title": "Expérience & Communauté",
+      "subtitle": "Mes engagements",
+      "she4tech": "Co-fondatrice — She4Tech. Gestion de projets. Association étudiante/communautaire encourageant les jeunes filles dans la tech.",
+      "fagiciel": "Stagiaire — FAGICIEL. CMS, WordPress, méthodes agiles, Trello, Scrum.",
+      "yaounde1": "Université de Yaoundé 1",
+      "others": "Hackathons et enseignement."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Dis-moi bonjour",
+      "email": "M'envoyer un mail",
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "cv": "Télécharger CV"
+    },
+    "footer": "Fait avec HTML, CSS & JavaScript purs.",
+    "loader": {
+      "text": "Chargement...",
+      "skip": "Passer l'intro"
+    }
+  }
+}
