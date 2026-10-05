@@ -1,158 +1,234 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Esthera Tiago — Developer portfolio. Projects, experience and certificates.">
-  <title>Esthera Tiago | Developer</title>
+  <meta name="description" content="Esthera Tiago — Mobile & Web Developer. Cute dev portfolio with projects, skills, certificates, experience and contact.">
+  <meta property="og:title" content="Esthera Tiago | cute dev">
+  <meta property="og:description" content="Mobile & Web Developer portfolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://esthera-tiago.me/assets/main.jpeg">
+  <meta property="og:url" content="https://esthera-tiago.me/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#7c3aed">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%237c3aed'/%3E%3Ctext x='32' y='38' font-size='28' font-family='Nunito,Quicksand,sans-serif' text-anchor='middle' fill='white'%3EET%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/theme.js"></script>
+  <title>Esthera Tiago | cute dev</title>
 </head>
 <body>
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#home" class="nav__logo">&lt;Esthera /&gt;</a>
-      <ul class="nav__menu" id="nav-menu">
-        <li><a href="#home" class="nav__link active">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#experience" class="nav__link">Experience</a></li>
-        <li><a href="#certificates" class="nav__link">Certificates</a></li>
-        <li><a href="#projects" class="nav__link">Projects</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-      <div class="nav__actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark / light mode">
-          <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <div class="cat-loader" data-loader aria-live="polite">
+    <img src="assets/cats/cute-headphones.svg" alt="Cute cat loader" class="cat-loader__svg">
+    <div class="cat-loader__title">esthera-tiago.me</div>
+    <div class="cat-loader__text" data-i18n="loader.text">Loading...</div>
+    <button class="cat-loader__skip" data-loader-skip data-i18n="loader.skip">Skip intro</button>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="#home">&lt;Esthera <span data-i18n="brand">cute dev</span> /&gt;</a>
+      <nav class="topbar__nav" aria-label="Primary">
+        <ul class="topbar__menu" id="nav-menu">
+        </ul>
+      </nav>
+      <div class="topbar__group">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
         </button>
-        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-toggle__btn" data-lang="en" aria-pressed="true">EN</button>
+          <span aria-hidden="true">/</span>
+          <button class="lang-toggle__btn" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
       </div>
-    </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero section" id="home">
+    <section class="hero" id="home">
       <div class="container hero__inner">
-        <div class="hero__text reveal">
-          <p class="hero__hello">Hi there, I'm</p>
-          <h1 class="hero__title">Esthera Tiago</h1>
-          <h2 class="hero__role">Developer</h2>
-          <p class="hero__description">
-            I build clean, functional and user-friendly web experiences.
-            Passionate about turning ideas into working code.
-          </p>
-          <div class="hero__buttons">
-            <a href="#contact" class="btn btn--primary">Get in touch</a>
-            <a href="#projects" class="btn btn--ghost">View projects</a>
-          </div>
-          <div class="hero__socials">
-            <a href="https://github.com/esthera-tiago" target="_blank" rel="noopener" class="social-link" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-            </a>
-            <a href="mailto:estheratiago@gmail.com" class="social-link" title="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/esthera-tiago" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-            </a>
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">Hello, I'm</p>
+          <h1 class="hero__title" data-i18n="hero.name">Esthera Tiago</h1>
+          <div class="hero__handle">@cute dev</div>
+          <p class="hero__role" data-i18n="hero.role">Mobile & Web Developer</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects" data-i18n="hero.ctaProjects">Projects</a>
+            <a class="btn btn--ghost" href="#contact" data-i18n="hero.ctaContact">Contact</a>
           </div>
         </div>
-        <div class="hero__code reveal">
-          <div class="code-card">
-            <div class="code-card__bar">
-              <span></span><span></span><span></span>
-              <span class="code-card__file">about-me.js</span>
+        <div class="hero__photo-wrap reveal">
+          <div class="hero__photo">
+            <img src="assets/main.jpeg" alt="Esthera Tiago portrait" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="about">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="about.title">About</span></h2>
+        <p class="section__subtitle" data-i18n="about.subtitle">A bit about me</p>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p data-i18n="about.text1">I'm Esthera Tiago, a developer who loves building usable apps and simple interfaces...</p>
+            <p data-i18n="about.text2">I also love music and singing, and I'm an otaku.</p>
+          </div>
+          <aside class="about__card reveal">
+            <div class="about__card-bg" aria-hidden="true"></div>
+            <div class="about__card-body">
+              <h3 class="about__card-title" data-i18n="about.cardTitle">Quick facts</h3>
+              <ul class="about__card-list">
+                <li><strong data-i18n="about.email">Email</strong>: <a href="mailto:estheratiago@gmail.com">estheratiago@gmail.com</a></li>
+                <li><strong data-i18n="about.linkedin">LinkedIn</strong>: <a href="https://www.linkedin.com/in/esthera-tiago-a1818430b/?isSelfProfile=true" target="_blank" rel="noopener">LinkedIn profile</a></li>
+                <li><strong data-i18n="about.github">GitHub</strong>: <a href="https://github.com/esthera-tiago" target="_blank" rel="noopener">github.com/esthera-tiago</a></li>
+              </ul>
             </div>
-            <pre class="code-card__body"><code><span class="tok-k">const</span> developer = {
-  <span class="tok-p">name</span>: <span class="tok-s">'Esthera Tiago'</span>,
-  <span class="tok-p">role</span>: <span class="tok-s">'Developer'</span>,
-  <span class="tok-p">location</span>: <span class="tok-s">'Lisbon, Portugal'</span>,
-  <span class="tok-p">languages</span>: [<span class="tok-s">'HTML'</span>, <span class="tok-s">'CSS'</span>, <span class="tok-s">'JavaScript'</span>],
-  <span class="tok-p">focus</span>: <span class="tok-s">'clean, user-friendly code'</span>,
-  <span class="tok-p">hireable</span>: <span class="tok-b">true</span>
-};</code></pre>
+          </aside>
+        </div>
+        <div class="about__music reveal">
+          <h3 class="about__music-title" data-i18n="about.musicTitle">What I'm listening to</h3>
+          <p class="about__music-text" data-i18n="about.musicText">Placeholder...</p>
+          <div class="iframe-wrap">
+            <iframe data-src="" title="Playlist" loading="lazy" allow="encrypted-media"></iframe>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section__title">About <span>me</span></h2>
-        <p class="section__subtitle">A little bit about who I am</p>
-        <div class="about__grid reveal">
-          <p class="about__text">
-            I'm a developer with a passion for building things for the web.
-            I enjoy the process of taking a concept and turning it into a polished,
-            working product — paying attention to details, semantics and accessibility.
-          </p>
-          <ul class="about__facts">
-            <li><strong>Name:</strong> Esthera Tiago</li>
-            <li><strong>Location:</strong> Lisbon, Portugal</li>
-            <li><strong>Focus:</strong> Web development</li>
-            <li><strong>Status:</strong> Open to opportunities</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="skills">
-      <div class="container">
-        <h2 class="section__title">Skills</h2>
-        <p class="section__subtitle">Tools and technologies I work with</p>
-        <div class="skills__grid reveal" id="skills-grid">
-          <div class="skill-card"><span class="skill-card__name">HTML5</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="90"></span></div></div>
-          <div class="skill-card"><span class="skill-card__name">CSS3</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="85"></span></div></div>
-          <div class="skill-card"><span class="skill-card__name">JavaScript</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="80"></span></div></div>
-          <div class="skill-card"><span class="skill-card__name">Responsive Design</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="85"></span></div></div>
-          <div class="skill-card"><span class="skill-card__name">Git &amp; GitHub</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="80"></span></div></div>
-          <div class="skill-card"><span class="skill-card__name">Problem Solving</span><div class="skill-card__bar"><span class="skill-card__fill" data-width="85"></span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section__title">Experience</h2>
-        <p class="section__subtitle">Where I've worked</p>
-        <div class="timeline reveal" id="timeline">
-          <div class="timeline__empty">Experience entries will appear here.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="certificates">
-      <div class="container">
-        <h2 class="section__title">Certificates</h2>
-        <p class="section__subtitle">Certifications and achievements</p>
-        <div class="certificates__grid reveal" id="certificates-grid">
-          <div class="certificates__empty">Certificates will appear here.</div>
         </div>
       </div>
     </section>
 
     <section class="section" id="projects">
       <div class="container">
-        <h2 class="section__title">Projects</h2>
-        <p class="section__subtitle">Things I've built</p>
-        <div class="projects__grid reveal" id="projects-grid">
-          <div class="projects__empty">Projects will appear here.</div>
+        <h2 class="section__title"><span data-i18n="projects.title">Projects</span></h2>
+        <p class="section__subtitle" data-i18n="projects.subtitle">Things I've built</p>
+        <div class="project-filters" data-project-filters aria-label="Project filters"></div>
+        <div class="projects__grid" data-projects-grid></div>
+      </div>
+    </section>
+
+    <section class="section section--deep" id="skills">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="skills.title">Skills</span></h2>
+        <p class="section__subtitle" data-i18n="skills.subtitle">Grouped by area</p>
+        <div class="skills__groups">
+          <article class="skills-group reveal">
+            <h3 class="skills-group__title" data-i18n="skills.groups.mobile">Mobile</h3>
+            <div class="skills-group__list">
+              <span class="skill-pill">Flutter</span><span class="skill-pill">Dart</span><span class="skill-pill">Platform Channels (Kotlin/Swift)</span><span class="skill-pill">State Management</span><span class="skill-pill">Network/Connectivity</span>
+            </div>
+          </article>
+          <article class="skills-group reveal">
+            <h3 class="skills-group__title" data-i18n="skills.groups.web">Web</h3>
+            <div class="skills-group__list">
+              <span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">JavaScript</span><span class="skill-pill">SVG</span><span class="skill-pill">Git/GitHub</span>
+            </div>
+          </article>
+          <article class="skills-group reveal">
+            <h3 class="skills-group__title" data-i18n="skills.groups.tools">Tools</h3>
+            <div class="skills-group__list">
+              <span class="skill-pill">Firebase</span><span class="skill-pill">Supabase</span><span class="skill-pill">GitHub Copilot</span><span class="skill-pill">MCP</span><span class="skill-pill">Agile/Scrum</span><span class="skill-pill">Trello</span><span class="skill-pill">WordPress/CMS</span><span class="skill-pill">Photoshop</span><span class="skill-pill">Google Workspace</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt" id="contact">
+    <section class="section" id="certifications">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="certifications.title">Certificates</span></h2>
+        <p class="section__subtitle" data-i18n="certifications.subtitle">Courses and achievements</p>
+        <div class="cert-grid">
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">Yonsei University</div>
+            <h3 class="cert-card__title">Internet of Things (IoT), Wireless and Cloud Computing Emerging Technologies</h3>
+            <div class="cert-card__meta">Issued Sep 2025</div>
+            <a class="cert-card__link" href="https://drive.google.com/file/d/1JEmgUEmOgtk-Z3rjagnSClRVHL_w5pqQ/view?usp=drive_link" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">Python Cameroon</div>
+            <h3 class="cert-card__title">Certificate of attendance, PyCon and UbuCon Cameroon</h3>
+            <div class="cert-card__meta">Issued Oct 2026 · Credential ID CERT-RECK-3-0039</div>
+            <a class="cert-card__link" href="https://drive.google.com/file/d/1Z4BUSF4yTHF5oPFJNz9NJcyXZx3IQfuW/view?usp=drive_link" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">NextFlutter</div>
+            <h3 class="cert-card__title">Dart Avancé</h3>
+            <div class="cert-card__meta">Issued 2026</div>
+            <a class="cert-card__link" href="https://nextflutter.com/certifications/verify/NF-2026-DB3E9714" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">NextFlutter</div>
+            <h3 class="cert-card__title">Navigation et Routing</h3>
+            <div class="cert-card__meta">Issued 2026</div>
+            <a class="cert-card__link" href="https://nextflutter.com/certifications/verify/NF-2026-51F68C81" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">NextFlutter</div>
+            <h3 class="cert-card__title">State Management avec Riverpod</h3>
+            <div class="cert-card__meta">Issued 2026</div>
+            <a class="cert-card__link" href="https://nextflutter.com/certifications/verify/NF-2026-7E529BD2" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">NextFlutter</div>
+            <h3 class="cert-card__title">Appels Réseau et APIs</h3>
+            <div class="cert-card__meta">Issued 2026</div>
+            <a class="cert-card__link" href="https://nextflutter.com/certifications/verify/NF-2026-9E977873" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+          <article class="cert-card reveal">
+            <div class="cert-card__issuer">NextFlutter</div>
+            <h3 class="cert-card__title">Tests en Flutter</h3>
+            <div class="cert-card__meta">Issued 2026</div>
+            <a class="cert-card__link" href="https://nextflutter.com/certifications/verify/NF-2026-9B5B25A3" target="_blank" rel="noopener" data-i18n="certifications.verify">Verify</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="experience">
+      <div class="container">
+        <h2 class="section__title"><span data-i18n="experience.title">Experience & Community</span></h2>
+        <p class="section__subtitle" data-i18n="experience.subtitle">Where I've been involved</p>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <article class="timeline-card">
+              <h3 class="timeline-card__title">Co-founder</h3>
+              <div class="timeline-card__org"><a href="https://www.linkedin.com/company/she4tech/" target="_blank" rel="noopener">She4Tech</a></div>
+              <div class="timeline-card__date">Founded 1 July 2026</div>
+              <p class="timeline-card__desc" data-i18n="experience.she4tech">Co-founder — She4Tech. Project management. Student/community association encouraging young girls in tech.</p>
+            </article>
+          </div>
+          <div class="timeline-item reveal">
+            <article class="timeline-card">
+              <h3 class="timeline-card__title">Intern</h3>
+              <div class="timeline-card__org">FAGICIEL</div>
+              <div class="timeline-card__date">Internship</div>
+              <p class="timeline-card__desc" data-i18n="experience.fagiciel">CMS, WordPress, Agile methods, Trello, Scrum.</p>
+            </article>
+          </div>
+          <div class="timeline-item reveal">
+            <article class="timeline-card">
+              <h3 class="timeline-card__title">Student</h3>
+              <div class="timeline-card__org" data-i18n="experience.yaounde1">University of Yaoundé 1</div>
+              <p class="timeline-card__desc" data-i18n="experience.others">Hackathons and teaching activities as mentioned in context.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <div class="container container--narrow">
-        <h2 class="section__title">Get in touch</h2>
-        <p class="section__subtitle">Have a project or a question? Let's talk.</p>
-        <div class="contact__actions">
-          <a href="mailto:estheratiago@gmail.com" class="btn btn--primary">estheratiago@gmail.com</a>
-          <a href="https://github.com/esthera-tiago" target="_blank" rel="noopener" class="btn btn--ghost">GitHub profile</a>
+        <h2 class="section__title"><span data-i18n="contact.title">Contact</span></h2>
+        <p class="section__subtitle" data-i18n="contact.subtitle">Say hi</p>
+        <div class="contact__actions reveal">
+          <a class="btn btn--primary" href="mailto:estheratiago@gmail.com" data-i18n="contact.email">Email me</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/esthera-tiago-a1818430b/?isSelfProfile=true" target="_blank" rel="noopener" data-i18n="contact.linkedin">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://github.com/esthera-tiago" target="_blank" rel="noopener" data-i18n="contact.github">GitHub</a>
+          <a class="btn btn--ghost" href="https://drive.google.com/file/d/1ccMfwrMxZAqLy-aHccRcMcVkNfnttwA7/view?usp=sharing" target="_blank" rel="noopener" data-i18n="contact.cv">Download CV</a>
         </div>
       </div>
     </section>
@@ -160,11 +236,32 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; <span id="year"></span> Esthera Tiago. Built with pure HTML, CSS &amp; JavaScript.</p>
-      <a href="https://github.com/esthera-tiago" target="_blank" rel="noopener" class="footer__link">GitHub</a>
+      <p>&copy; <span id="year"></span> Esthera Tiago. <span data-i18n="footer">Built with pure HTML, CSS & JavaScript.</span></p>
+      <div><a href="https://github.com/esthera-tiago/esthera-tiago.github.io" target="_blank" rel="noopener">Source</a></div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/loader.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // theme toggle
+    const tt = document.getElementById('theme-toggle');
+    tt.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      if (window.__setTheme) window.__setTheme(cur);
+    });
+    // topbar shadow
+    const topbar = document.getElementById('topbar');
+    window.addEventListener('scroll', () => {
+      topbar.classList.toggle('topbar--scrolled', window.scrollY > 8);
+    }, { passive: true });
+    // reveal on scroll
+    const obs = new IntersectionObserver((ents) => {
+      ents.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
