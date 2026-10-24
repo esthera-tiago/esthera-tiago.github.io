@@ -22,6 +22,22 @@
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
+    // Reduced motion: remove SMIL animations and skip entrance animation
+    const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mqReduce.matches) {
+      const svg = loader.querySelector('svg');
+      if (svg) {
+        svg.querySelectorAll('animate').forEach((a) => a.remove());
+      }
+      // Ensure no entrance animation
+      const svgEl = loader.querySelector('.cat-loader__svg');
+      if (svgEl) {
+        svgEl.style.animation = 'none';
+        svgEl.style.opacity = '1';
+        svgEl.style.transform = 'none';
+      }
+    }
+
     const minDelay = 1600;
     const failSafe = 8000;
 

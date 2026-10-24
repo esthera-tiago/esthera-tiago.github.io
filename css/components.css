@@ -127,47 +127,23 @@
 }
 
 .cat-loader__svg {
-  width: min(140px, 40vw);
+  width: min(60vw, 280px);
   height: auto;
-  filter: drop-shadow(0 10px 24px rgba(124, 58, 237, 0.12));
+  filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.45));
+  opacity: 0;
+  transform: translateY(6px);
+  animation: cat-loader-in 0.8s var(--ease-out-soft) forwards;
 }
 
-.cat-track {
-  stroke: rgba(255, 255, 255, 0.18);
-  stroke-width: 3.5;
-  fill: none;
-}
-
-.cat-face {
-  fill: rgba(255, 255, 255, 0.18);
-}
-
-.cat-draw {
-  stroke: var(--purple-500, #8b5cf6);
-  stroke-width: 3.5;
-  fill: none;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw-cat 2.2s ease-in-out infinite;
-}
-
-@keyframes draw-cat {
-  0% {
-    stroke-dashoffset: 1;
+@keyframes cat-loader-in {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
-  70% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  90% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0;
-  }
+}
+
+.cat-silhouette {
+  display: block;
 }
 
 .cat-loader__skip {
@@ -187,10 +163,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cat-draw {
+  .cat-loader__svg {
     animation: none;
-    stroke-dashoffset: 0;
     opacity: 1;
+    transform: none;
   }
   .cat-loader {
     transition-duration: 150ms;
