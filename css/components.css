@@ -149,7 +149,7 @@
 .cat-loader__text {
   margin-top: var(--space-xs);
   font-size: 0.95rem;
-  color: var(--text-muted, #6b7280);
+  color: var(--purple-300, #c4b5fd);
   letter-spacing: 0.02em;
 }
 
