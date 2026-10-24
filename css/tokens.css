@@ -5,6 +5,18 @@
    ========================================================================== */
 
 :root {
+  /* --- Purple scale (50-900) --- */
+  --purple-50: #f7f3ff;
+  --purple-100: #ede4ff;
+  --purple-200: #d9c7ff;
+  --purple-300: #c4b5fd;
+  --purple-400: #a78bfa;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-800: #5b21b6;
+  --purple-900: #4c1d95;
+
   /* --- Brand hues (theme-independent anchors) --- */
   --hue-violet: 262;
   --hue-magenta: 288;
@@ -13,6 +25,28 @@
   --font-display: 'Nunito', 'Quicksand', ui-rounded, 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Nunito', 'Quicksand', ui-rounded, 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- Font scale and line heights/weights --- */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.5rem;
+  --fs-4xl: 3rem;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
 
   /* --- Spacing scale (4px base) --- */
   --space-3xs: 0.25rem;
@@ -34,14 +68,21 @@
 
   /* --- Layout --- */
   --container: 1100px;
+  --container-width: 1100px;
   --container-narrow: 720px;
   --topbar-h: 62px;
 
   /* --- Motion --- */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-fast: 140ms;
   --dur-mid: 260ms;
   --dur-slow: 700ms;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px rgba(60, 30, 110, 0.06), 0 2px 6px rgba(60, 30, 110, 0.05);
+  --shadow-md: 0 4px 12px rgba(60, 30, 110, 0.08), 0 10px 28px rgba(60, 30, 110, 0.07);
+  --shadow-lg: 0 10px 24px rgba(60, 30, 110, 0.1), 0 24px 56px rgba(60, 30, 110, 0.09);
 
   --z-topbar: 100;
   --z-loader: 200;
