@@ -1,40 +1,57 @@
 (function () {
   const loader = document.querySelector('[data-loader]');
   const skipBtn = document.querySelector('[data-loader-skip]');
-  const STORAGE_KEY = 'esthera-loader-seen-v1';
+  const start = Date.now();
 
   function hideLoader() {
     if (!loader) return;
-    loader.classList.add('cat-loader--hidden');
-    setTimeout(() => {
+    if (loader.classList.contains('is-done')) return;
+    loader.classList.add('is-done');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+    const remove = () => {
       if (loader.parentNode) loader.parentNode.removeChild(loader);
-    }, 260);
-    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-  }
-
-  function shouldShow() {
-    try {
-      if (sessionStorage.getItem(STORAGE_KEY) === '1') return false;
-    } catch (e) {}
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mq.matches) return false;
-    return true;
+    };
+    loader.addEventListener('transitionend', remove, { once: true });
+    setTimeout(remove, 500);
   }
 
   function init() {
-    if (!loader || !shouldShow()) {
-      if (loader) {
-        loader.classList.add('cat-loader--hidden');
-        setTimeout(() => loader.remove(), 10);
+    if (!loader) return;
+    // Prevent scroll while loader visible
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+
+    const minDelay = 1600;
+    const failSafe = 8000;
+
+    function tryHide() {
+      const elapsed = Date.now() - start;
+      if (elapsed < minDelay) {
+        setTimeout(tryHide, minDelay - elapsed);
+        return;
       }
-      return;
+      hideLoader();
     }
-    const min = 1200;
-    const max = 2000;
-    const t = Math.floor(Math.random() * (max - min + 1)) + min;
-    window.__loaderTimer = setTimeout(hideLoader, t);
-    if (skipBtn) skipBtn.addEventListener('click', () => { clearTimeout(window.__loaderTimer); hideLoader(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { clearTimeout(window.__loaderTimer); hideLoader(); } }, { once: true });
+
+    if (document.readyState === 'complete') {
+      tryHide();
+    } else {
+      window.addEventListener('load', tryHide, { once: true });
+    }
+
+    setTimeout(hideLoader, failSafe);
+
+    if (skipBtn) {
+      skipBtn.addEventListener('click', () => {
+        hideLoader();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hideLoader();
+      }
+    }, { once: true });
   }
 
   if (document.readyState === 'loading') {

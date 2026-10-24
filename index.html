@@ -22,10 +22,26 @@
   <title>Esthera Tiago | cute dev</title>
 </head>
 <body>
-  <div class="cat-loader" data-loader aria-live="polite">
-    <img src="assets/cats/cute-headphones.svg" alt="Cute cat loader" class="cat-loader__svg">
-    <div class="cat-loader__title">esthera-tiago.me</div>
-    <div class="cat-loader__text" data-i18n="loader.text">Loading...</div>
+  <noscript><style>.cat-loader{display:none!important}</style></noscript>
+  <div class="cat-loader" data-loader role="status" aria-live="polite" aria-label="Loading">
+    <svg class="cat-loader__svg" viewBox="0 0 100 100" width="120" height="120" fill="none"
+         stroke-width="3.5" stroke-linejoin="round" aria-hidden="true">
+      <path class="cat-track" pathLength="1" d="
+        M 50 28 C 56 28 61 29 66 31 L 80 14 L 84 42
+        C 88 50 88 60 84 68 C 78 80 64 86 50 86
+        C 36 86 22 80 16 68 C 12 60 12 50 16 42
+        L 20 14 L 34 31 C 39 29 44 28 50 28 Z"/>
+      <path class="cat-draw" pathLength="1" d="
+        M 50 28 C 56 28 61 29 66 31 L 80 14 L 84 42
+        C 88 50 88 60 84 68 C 78 80 64 86 50 86
+        C 36 86 22 80 16 68 C 12 60 12 50 16 42
+        L 20 14 L 34 31 C 39 29 44 28 50 28 Z"/>
+      <g class="cat-face" stroke="none">
+        <circle cx="38" cy="54" r="3.5"/>
+        <circle cx="62" cy="54" r="3.5"/>
+        <path d="M 46 64 L 54 64 L 50 69 Z"/>
+      </g>
+    </svg>
     <button class="cat-loader__skip" data-loader-skip data-i18n="loader.skip">Skip intro</button>
   </div>
 
