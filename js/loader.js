@@ -58,6 +58,7 @@
 
     setTimeout(hideLoader, failSafe);
 
+    /*
     if (skipBtn) {
       skipBtn.addEventListener('click', () => {
         hideLoader();
@@ -68,6 +69,7 @@
         hideLoader();
       }
     }, { once: true });
+    */
   }
 
   if (document.readyState === 'loading') {

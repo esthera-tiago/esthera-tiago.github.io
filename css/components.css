@@ -146,6 +146,14 @@
   display: block;
 }
 
+.cat-loader__text {
+  margin-top: var(--space-xs);
+  font-size: 0.95rem;
+  color: var(--text-muted, #6b7280);
+  letter-spacing: 0.02em;
+}
+
+/*
 .cat-loader__skip {
   margin-top: var(--space-xs);
   padding: 0.45rem 0.9rem;
@@ -161,6 +169,7 @@
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
+*/
 
 @media (prefers-reduced-motion: reduce) {
   .cat-loader__svg {
