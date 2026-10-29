@@ -70,9 +70,17 @@
             <a class="btn btn--ghost" href="#contact" data-i18n="hero.ctaContact">Contact</a>
           </div>
         </div>
-        <div class="hero__photo-wrap reveal">
-          <div class="hero__photo">
-            <img src="assets/main.jpeg" alt="Esthera Tiago portrait" loading="eager">
+        <div class="hero__avatar-wrap reveal">
+          <div class="avatar" id="avatar" role="img" data-i18n-attr="aria-label:hero.avatar.label">
+            <div class="avatar__stage">
+              <img class="avatar__layer" data-pose="default" src="assets/avatar/avatar-default.webp" alt="" width="525" height="1100" decoding="async" fetchpriority="high">
+              <img class="avatar__layer" data-pose="left"    src="assets/avatar/avatar-left.webp"    alt="" width="525" height="1100" decoding="async">
+              <img class="avatar__layer" data-pose="right"   src="assets/avatar/avatar-right.webp"   alt="" width="525" height="1100" decoding="async">
+              <img class="avatar__layer" data-pose="up"      src="assets/avatar/avatar-up.webp"      alt="" width="525" height="1100" decoding="async">
+              <img class="avatar__layer" data-pose="down"    src="assets/avatar/avatar-down.webp"    alt="" width="525" height="1100" decoding="async">
+              <img class="avatar__layer" data-pose="blink"   src="assets/avatar/avatar-blink.webp"   alt="" width="525" height="1100" decoding="async">
+              <img class="avatar__layer" data-pose="wink"    src="assets/avatar/avatar-wink.webp"    alt="" width="525" height="1100" decoding="async">
+            </div>
           </div>
         </div>
       </div>
@@ -252,6 +260,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/projects.js"></script>
   <script src="js/loader.js"></script>
+  <script src="js/avatar.js" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     // theme toggle

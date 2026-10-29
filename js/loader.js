@@ -9,6 +9,9 @@
     loader.classList.add('is-done');
     document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
+    try {
+      document.dispatchEvent(new CustomEvent('loader:done'));
+    } catch (e) {}
     const remove = () => {
       if (loader.parentNode) loader.parentNode.removeChild(loader);
     };

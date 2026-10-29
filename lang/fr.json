@@ -9,13 +9,16 @@
       "experience": "Expérience & Communauté",
       "contact": "Contact"
     },
-    "hero": {
-      "eyebrow": "Salut, je suis",
-      "name": "Esthera Tiago",
-      "role": "Développeuse Mobile & Web",
-      "ctaProjects": "Projets",
-      "ctaContact": "Contact"
-    },
+  "hero": {
+    "eyebrow": "Bonjour, je suis",
+    "name": "Esthera Tiago",
+    "role": "Développeuse Mobile & Web",
+    "ctaProjects": "Projets",
+    "ctaContact": "Contact",
+    "avatar": {
+      "label": "Illustration d'Esthera Tiago, un avatar de développeuse mignonne qui suit le curseur"
+    }
+  },
     "about": {
       "title": "À propos",
       "subtitle": "Un peu de moi",

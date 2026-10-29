@@ -58,6 +58,17 @@ function applyTranslations() {
     }
     el.textContent = val;
   });
+  document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+    const spec = el.getAttribute('data-i18n-attr');
+    if (!spec) return;
+    const parts = spec.split(':');
+    if (parts.length < 2) return;
+    const attr = parts[0];
+    const key = parts.slice(1).join(':');
+    const val = t(key);
+    if (val === null) return;
+    el.setAttribute(attr, val);
+  });
   document.title = `${I18N.dict[I18N.current]?.hero?.name || 'Esthera Tiago'} | ${I18N.dict[I18N.current]?.brand || 'cute dev'}`;
 }
 
